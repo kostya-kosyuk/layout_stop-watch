@@ -22,3 +22,71 @@
 .anim--small-arrow--rotate {
   @include anim-arrow-rotate ($anim_small-arrow_rotate-time);
 }
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate($anim-shake-degrees);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-$anim-shake-degrees);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@mixin anim-destroy-stage {
+  @include square (100%);
+
+  position: absolute;
+
+  content: '';
+
+  @include background-image (url(../images/blocks/destroy_stages/destroy_stage_1.png));
+}
+
+@keyframes destroy {
+  0% {
+    background-image: url(../images/blocks/destroy_stages/destroy_stage_1.png);
+  }
+
+  20% {
+    background-image: url(../images/blocks/destroy_stages/destroy_stage_3.png);
+  }
+
+  40% {
+    background-image: url(../images/blocks/destroy_stages/destroy_stage_5.png);
+  }
+
+  60% {
+    background-image: url(../images/blocks/destroy_stages/destroy_stage_7.png);
+  }
+
+  80% {
+    background-image: url(../images/blocks/destroy_stages/destroy_stage_9.png);
+  }
+
+  100% {
+    background-image: none;
+    visibility: hidden;
+  }
+}
+.anim--block {
+  animation: $anim-shake-time linear 2s infinite shake;
+}
+
+.anim--block::before {
+  @include anim-destroy-stage;
+
+  animation: $anim_small-arrow_rotate-time/12 steps(2) infinite destroy;
+}

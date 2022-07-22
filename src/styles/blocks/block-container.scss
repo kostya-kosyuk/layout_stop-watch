@@ -30,7 +30,10 @@
   &__block {
     @include background-image (url(../images/blocks/diamond_ore.png));
 
+    position: relative;
+
     height: 100%;
     width: $block-size;
+
   }
 }

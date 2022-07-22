@@ -19,11 +19,11 @@
 
   }
 
-  &--clock-position--relative {
+  &__clock-position--relative {
     position: relative;
   }
 
-  &--clock-size {
+  &__clock-size {
     @include square ($clock-size);
   }
 
