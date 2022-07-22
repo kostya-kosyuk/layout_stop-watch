@@ -50,7 +50,7 @@
 
   position: absolute;
 
-  content: '';
+  content: "";
 
   @include background-image (url(../images/blocks/destroy_stages/destroy_stage_1.png));
 }
@@ -80,13 +80,4 @@
     background-image: none;
     visibility: hidden;
   }
-}
-.anim--block {
-  animation: $anim-shake-time linear 2s infinite shake;
-}
-
-.anim--block::before {
-  @include anim-destroy-stage;
-
-  animation: $anim_small-arrow_rotate-time/12 steps(2) infinite destroy;
 }

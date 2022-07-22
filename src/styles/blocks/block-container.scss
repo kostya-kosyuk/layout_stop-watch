@@ -35,5 +35,15 @@
     height: 100%;
     width: $block-size;
 
+    &--anim--shake {
+      animation: $anim-shake-time linear 2s infinite shake;
+
+      &::before {
+        @include anim-destroy-stage;
+
+        animation: $anim_small-arrow_rotate-time/12 steps(2) infinite destroy;
+      }
+    }
+
   }
 }

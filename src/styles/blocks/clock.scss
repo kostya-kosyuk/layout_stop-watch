@@ -19,7 +19,7 @@
     @include arrow-anim_position_top-left ($small-arrow-size);
   }
 
-  &__block-container-size {
+  &__block-container--size {
 
     height: $block-size;
     width: 100%;
